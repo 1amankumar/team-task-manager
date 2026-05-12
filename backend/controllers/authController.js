@@ -81,13 +81,22 @@ export const sigIn = async (req, res) => {
 //signOut controller
 export const signOut = async (req, res) => {
     try {
-        res.clearCookie("token")
-        return res.status(200).json({ message: "Logout Successfully." })
-    } catch (error) {
-        return res.status(500).json(`signout error ${error}`)
+        res.clearCookie("token", {
+            httpOnly: true,
+            secure: true,
+            sameSite: "none"
+        });
 
+        return res.status(200).json({
+            message: "Logout Successfully."
+        });
+
+    } catch (error) {
+        return res.status(500).json({
+            message: `signout error ${error}`
+        });
     }
-}
+};
 export const getAllUsers = async (req, res) => {
     try {
         const users = await User.find().select(
