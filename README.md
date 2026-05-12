@@ -111,15 +111,15 @@ Team-Task-Manager/
 ### Backend `.env`
 
 ```env
-MONGO_URI=mongodb+srv://aman4578kumar_db_user:bQ8cWGC0KW3pYm3x@cluster0.gdcxpkc.mongodb.net/?appName=Cluster0
-JWT_SECRET=fvneveiefvefnv94ru34iofr
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
 PORT=5000
 ```
 
 ### Frontend `.env`
 
 ```env
-VITE_API_URL=https://team-task-manager-production-0764.up.railway.app/api
+VITE_API_URL=https://your-backend-url/api
 ```
 
 ---
