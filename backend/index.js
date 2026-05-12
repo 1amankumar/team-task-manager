@@ -15,7 +15,7 @@ const app = express();
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://team-task-manager-production-b3cc.up.railway.app"
+        "https://frontend-production-e21c.up.railway.app"
     ],
     credentials: true
 }));
@@ -27,8 +27,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/projects", projectRoutes);
 app.use("/api/tasks", taskRoutes);
 
-mongoose
-    .connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("MongoDB Connected"))
     .catch((err) => console.log(err));
 
