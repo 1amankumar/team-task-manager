@@ -25,26 +25,12 @@ function Signup() {
         e.preventDefault();
 
         try {
-            const res = await API.post(
-                "/auth/signup",
-                formData
-            );
+            const res = await API.post("/auth/signup", formData);
 
-            /* Save login state */
-            localStorage.setItem(
-                "isLoggedIn",
-                "true"
-            );
-
-            /* Save role for role-based UI */
-            localStorage.setItem(
-                "role",
-                formData.role
-            );
+            localStorage.setItem("role", res.data.role);
+            localStorage.setItem("isLoggedIn", "true");
 
             alert("Signup Successful");
-
-            /* Redirect directly to dashboard */
             navigate("/dashboard");
 
         } catch (error) {

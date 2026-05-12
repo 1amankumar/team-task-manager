@@ -27,10 +27,9 @@ function Login() {
                 formData
             );
 
-            localStorage.setItem(
-                "isLoggedIn",
-                "true"
-            );
+            localStorage.setItem("role", res.data.role);
+            localStorage.setItem("isLoggedIn", "true");
+            alert("Login Successful");
 
             navigate("/dashboard");
         } catch (error) {
