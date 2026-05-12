@@ -15,7 +15,7 @@ const app = express();
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://modest-reflection-production.up.railway.app"
+        "https://team-task-manager-production-b3cc.up.railway.app"
     ],
     credentials: true
 }));
